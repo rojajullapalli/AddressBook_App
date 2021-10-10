@@ -42,10 +42,10 @@ public class AddressBookController {
         return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<ResponseDto> updateAddress(@RequestBody AddressBookDto addressBookDto){
+    @PutMapping("/update/{addrId}")
+    public ResponseEntity<ResponseDto> updateAddress(@PathVariable(value="addrId") int addrId,@RequestBody AddressBookDto addressBookDto){
         AddressBook addressBook = null;
-        addressBook = addressBookService.UpdateAddress(addressBookDto);
+        addressBook = addressBookService.UpdateAddress(addrId,addressBookDto);
         ResponseDto responseDto = new ResponseDto("updated Address ",addressBook);
         return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
     }

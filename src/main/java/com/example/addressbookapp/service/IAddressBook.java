@@ -12,7 +12,7 @@ public interface IAddressBook {
 
     AddressBook addAddress(AddressBookDto addressBookDto);
 
-    AddressBook UpdateAddress(AddressBookDto addressBookDto);
+    AddressBook UpdateAddress(int addrId,AddressBookDto addressBookDto);
 
     void deleteAddrees(int addrId);
 }

@@ -9,36 +9,41 @@ import java.util.List;
 @Service
 public class AddressBookService implements IAddressBook{
 
+    private List<AddressBook> addressBookList = new ArrayList<>();
+
     @Override
     public List<AddressBook> getAddressBookData() {
-        List<AddressBook> addressBookList = new ArrayList<>();
-        addressBookList.add(new AddressBook(1,new AddressBookDto("roja","jullapalli","chennai","tamilnadu",602026,78786667)));
         return addressBookList;
     }
 
     @Override
     public AddressBook getAddressBookDataById(int addrId) {
-       AddressBook addressBook = null;
-       addressBook = new AddressBook(1,new AddressBookDto("roja","jullapalli","chennai","tamilnadu",602026,78786667));
-        return addressBook;
+        return addressBookList.get(addrId-1);
     }
 
     @Override
     public AddressBook addAddress(AddressBookDto addressBookDto) {
         AddressBook addressBook = null;
-        addressBook = new AddressBook(1,addressBookDto);
+        addressBook = new AddressBook(addressBookList.size()+1,addressBookDto);
+        addressBookList.add(addressBook);
         return addressBook;
     }
 
     @Override
-    public AddressBook UpdateAddress(AddressBookDto addressBookDto) {
-        AddressBook addressBook = null;
-        addressBook = new AddressBook(1,addressBookDto);
+    public AddressBook UpdateAddress(int addrId,AddressBookDto addressBookDto) {
+        AddressBook addressBook = this.getAddressBookDataById(addrId);
+        addressBook.setFirstName(addressBookDto.getFirstName());
+        addressBook.setLastName(addressBookDto.getLastName());
+        addressBook.setCity(addressBookDto.getCity());
+        addressBook.setState(addressBookDto.getState());
+        addressBook.setPincode(addressBookDto.getPincode());
+        addressBook.setPhoneNumber(addressBookDto.getPhoneNumber());
+        addressBookList.set(addrId-1,addressBook);
         return addressBook;
     }
 
     @Override
     public void deleteAddrees(int addrId) {
-
+        addressBookList.remove(addrId-1);
     }
 }

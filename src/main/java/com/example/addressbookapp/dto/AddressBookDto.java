@@ -1,5 +1,8 @@
 package com.example.addressbookapp.dto;
 
+import lombok.Data;
+
+@Data
 public class AddressBookDto {
     public String firstName;
     public String lastName;
