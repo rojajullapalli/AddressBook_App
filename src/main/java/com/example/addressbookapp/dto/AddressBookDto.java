@@ -1,7 +1,13 @@
 package com.example.addressbookapp.dto;
 
 import lombok.Data;
-
+/**
+ * creates and maintains employee payroll as object (DTO)
+ *
+ * @author roja julapalli
+ * @version 0.0.1
+ * @since 10-10-2021
+ */
 @Data
 public class AddressBookDto {
     public String firstName;

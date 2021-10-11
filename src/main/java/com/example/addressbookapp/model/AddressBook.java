@@ -2,7 +2,13 @@ package com.example.addressbookapp.model;
 
 import com.example.addressbookapp.dto.AddressBookDto;
 import lombok.Data;
-
+/**
+ * Receive data Object
+ *
+ * @author roja julapalli
+ * @version 0.0.1
+ * @since 10-10-2021
+ */
 @Data
 public class AddressBook {
     private int id;
