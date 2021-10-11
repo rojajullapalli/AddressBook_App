@@ -2,6 +2,7 @@ package com.example.addressbookapp.model;
 
 import com.example.addressbookapp.dto.AddressBookDto;
 import lombok.Data;
+
 /**
  * Receive data Object
  *

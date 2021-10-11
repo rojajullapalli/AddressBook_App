@@ -1,6 +1,7 @@
 package com.example.addressbookapp.dto;
 
 import lombok.Data;
+
 /**
  * creates and maintains AddressBookDto data as object (DTO)
  *
